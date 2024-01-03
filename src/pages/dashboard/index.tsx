@@ -75,7 +75,10 @@ function Dashboard() {
               scrollBackground ? styles.scrollBackground : ""
             }`}
           >
-            <div className={styles.line}></div>
+            {scrollBackground ? (
+              // Add a line when scrollBackground is true
+              <div className={styles.line}></div>
+            ) : null}
             <div className={styles.bgColor}></div>
             <div className={styles.rollingText}>
               {scrollBackground ? (

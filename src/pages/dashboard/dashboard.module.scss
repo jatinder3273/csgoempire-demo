@@ -425,3 +425,14 @@
 .slick_slider {
   max-width: 300px;
 }
+
+.line {
+  height: 100px;
+  width: 4px;
+  background-color: red;
+  position: absolute;
+  display: block;
+  margin: 0 auto;
+  left: 0;
+  right: 0;
+}
