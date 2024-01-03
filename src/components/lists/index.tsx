@@ -23,11 +23,6 @@ function Lists() {
   const [animatedBetsCard, setAnimatedBetsCard] = useState<any>([]);
   const [animatedBetsTotal, setAnimatedBetsTotal] = useState<any>([]);
 
-  // Refs to track mounting state for each section
-  const isMounted = useRef(false);
-  const isMountedCard = useRef(false);
-  const isMountedCardTotal = useRef(false);
-
   // useEffect to animatedBetsTotal total bets
   useEffect(() => {
     console.log(5);
@@ -49,15 +44,8 @@ function Lists() {
       }
     };
 
-    if (isMountedCardTotal.current) {
-      console.log(2);
-      // Only run the effect after the initial render
-      animatedBetsTotalFun();
-    } else {
-      console.log(3);
-      isMountedCardTotal.current = true;
-    }
-  }, [isMountedCardTotal]);
+    animatedBetsTotalFun();
+  }, []);
 
   // useEffect to animateBets  bets
   useEffect(() => {
@@ -74,13 +62,8 @@ function Lists() {
       }
     };
 
-    if (isMounted.current) {
-      // Only run the effect after the initial render
-      animateBetsFun();
-    } else {
-      isMounted.current = true;
-    }
-  }, [isMounted]);
+    animateBetsFun();
+  }, []);
 
   // useEffect to animatedBetsCard  bets
   useEffect(() => {
@@ -97,13 +80,8 @@ function Lists() {
       }
     };
 
-    if (isMountedCard.current) {
-      // Only run the effect after the initial render
-      animatedBetsCardFun();
-    } else {
-      isMountedCard.current = true;
-    }
-  }, [isMountedCard]);
+    animatedBetsCardFun();
+  }, []);
 
   // bet total amount function
   function calculateTotalAmount(bets: Bet[]): number {
