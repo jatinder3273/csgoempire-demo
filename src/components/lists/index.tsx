@@ -8,7 +8,7 @@ import {
   totalBetsCard1,
   totalBetsCard2,
 } from "../../pages/dashboard/dummyData";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 
 // Define the structure of individual bets
 interface Bet {
