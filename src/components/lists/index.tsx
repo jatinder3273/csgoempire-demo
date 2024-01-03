@@ -38,6 +38,9 @@ function Lists() {
 
     const animatedBetsTotalFun = async () => {
       for (const element of sortedBet) {
+        console.log("====================================");
+        console.log(element, "element");
+        console.log("====================================");
         await new Promise((resolve) => setTimeout(resolve, delay));
         setAnimatedBetsTotal((prevBets: Bet[]) => [...prevBets, element]);
       }
