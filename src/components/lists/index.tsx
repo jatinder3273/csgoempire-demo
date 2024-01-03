@@ -31,7 +31,7 @@ function Lists() {
   // useEffect to animatedBetsTotal total bets
   useEffect(() => {
     console.log(5);
-    console.log("data", animatedBets, animatedBetsCard, animatedBetsTotal);
+    // console.log("data", animatedBets, animatedBetsCard, animatedBetsTotal);
     const delay = 1200; // Set a larger delay time (in milliseconds)
 
     const sortedBet = totalBets.sort((a: Bet, b: Bet) => b.amount - a.amount);
