@@ -57,7 +57,7 @@ function Lists() {
       console.log(3);
       isMountedCardTotal.current = true;
     }
-  }, []);
+  }, [isMountedCardTotal]);
 
   // useEffect to animateBets  bets
   useEffect(() => {
@@ -80,7 +80,7 @@ function Lists() {
     } else {
       isMounted.current = true;
     }
-  }, []);
+  }, [isMounted]);
 
   // useEffect to animatedBetsCard  bets
   useEffect(() => {
@@ -103,7 +103,7 @@ function Lists() {
     } else {
       isMountedCard.current = true;
     }
-  }, []);
+  }, [isMountedCard]);
 
   // bet total amount function
   function calculateTotalAmount(bets: Bet[]): number {
