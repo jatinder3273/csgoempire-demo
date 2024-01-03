@@ -126,19 +126,17 @@ function Lists() {
             </div>
             <ul>
               {animatedBetsTotal.map((bet: any, index: number) => (
-                <>
-                  <li key={`c-${index}`}>
-                    <div className={styles.TotlaBet}>
-                      <div className={styles.placeLeft}>
-                        {bet.icon}
-                        <h4>Place Bet</h4>
-                      </div>
-                      <div className={styles.placeRight}>
-                        <h6>{` ${bet.winMultiplier}`}</h6>
-                      </div>
+                <li key={`c-${index}`}>
+                  <div className={styles.TotlaBet}>
+                    <div className={styles.placeLeft}>
+                      {bet.icon}
+                      <h4>Place Bet</h4>
                     </div>
-                  </li>
-                </>
+                    <div className={styles.placeRight}>
+                      <h6>{` ${bet.winMultiplier}`}</h6>
+                    </div>
+                  </div>
+                </li>
               ))}
             </ul>
           </div>
@@ -166,19 +164,17 @@ function Lists() {
             </div>
             <ul>
               {animatedBetsCard.map((bet: any, index: number) => (
-                <>
-                  <li key={`b-${index}`}>
-                    <div className={styles.TotlaBet}>
-                      <div className={styles.placeLeft}>
-                        {bet.icon}
-                        <h4>Place Bet</h4>
-                      </div>
-                      <div className={styles.placeRight}>
-                        <h6>{` ${bet.winMultiplier}`}</h6>
-                      </div>
+                <li key={`b-${index}`}>
+                  <div className={styles.TotlaBet}>
+                    <div className={styles.placeLeft}>
+                      {bet.icon}
+                      <h4>Place Bet</h4>
                     </div>
-                  </li>
-                </>
+                    <div className={styles.placeRight}>
+                      <h6>{` ${bet.winMultiplier}`}</h6>
+                    </div>
+                  </div>
+                </li>
               ))}
             </ul>
           </div>
@@ -206,19 +202,17 @@ function Lists() {
             </div>
             <ul>
               {animatedBets.map((bet: any, index: number) => (
-                <>
-                  <li key={`a-${index}`}>
-                    <div className={styles.TotlaBet}>
-                      <div className={styles.placeLeft}>
-                        {bet.icon}
-                        <h4>Place Bet</h4>
-                      </div>
-                      <div className={styles.placeRight}>
-                        <h6>{` ${bet.winMultiplier}`}</h6>
-                      </div>
+                <li key={`a-${index}`}>
+                  <div className={styles.TotlaBet}>
+                    <div className={styles.placeLeft}>
+                      {bet.icon}
+                      <h4>Place Bet</h4>
                     </div>
-                  </li>
-                </>
+                    <div className={styles.placeRight}>
+                      <h6>{` ${bet.winMultiplier}`}</h6>
+                    </div>
+                  </div>
+                </li>
               ))}
             </ul>
           </div>

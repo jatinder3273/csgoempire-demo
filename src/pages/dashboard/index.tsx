@@ -100,7 +100,9 @@ function Dashboard() {
         </Row>
 
         {/* List Amount Section Start Here  */}
-        <Lists />
+        <div>
+          <Lists />
+        </div>
       </div>
 
       {/* Table  Section Start Here  */}
