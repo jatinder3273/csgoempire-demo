@@ -1,0 +1,10 @@
+@import url("./fonts/stylesheet.css");
+
+body {
+  margin: 0;
+  font-family: "Proxima Nova Rg" !important;
+  
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+

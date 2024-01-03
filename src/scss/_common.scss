@@ -1,0 +1,47 @@
+@import "./var";
+img {
+  max-width: 100%;
+}
+h1 {
+  font-size: $font40;
+  @include max($xl) {
+    font-size: 36px;
+  }
+}
+h2 {
+  font-size: $font32;
+  @include max($xl) {
+    font-size: 36px;
+  }
+  @include max($lg) {
+    font-size: 30px;
+  }
+}
+h3 {
+  font-size: 28px;
+}
+h4 {
+  font-size: 24px;
+}
+h5 {
+  font-size: $font20;
+}
+h6 {
+  font-size: $font18;
+}
+p {
+  font-size: $font16;
+}
+li {
+  font-size: $font14;
+}
+// span {
+//   font-size: 12px;
+// }
+.small {
+  font-size: $font14;
+}
+
+body {
+  font-family: "Proxima Nova Rg" !important;
+}

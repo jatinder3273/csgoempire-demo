@@ -1,0 +1,75 @@
+// colors
+$primary: #121c23;
+$secondary: #00a3ff;
+$grey: #676d7a;
+$lightgrey: #a9b0bf;
+$white: #fff;
+$black: #0a0e18;
+
+// fontSize
+$font14: 14px;
+$font16: 16px;
+$font18: 18px;
+$font20: 20px;
+$font22: 22px;
+$font32: 32px;
+$font40: 40px;
+$font36: 36px;
+
+// fontWeight
+$fontWeight400: 400;
+$fontWeight500: 500;
+$fontWeight600: 600;
+$fontWeight700: 700;
+
+// responsive widths
+$sm: 374;
+$md: 424;
+$lg: 767;
+$xl: 1023;
+$xl1: 1439;
+$xl2: 1023;
+$xl3: 1439;
+$xl5: 1599;
+
+// responsive media functions
+@mixin min($value) {
+  @media screen and (min-width: ($value + 1 + "px")) {
+    @content;
+  }
+}
+@mixin max($value) {
+  @media screen and (max-width: ($value + "px")) {
+    @content;
+  }
+}
+@mixin minMax($min, $max) {
+  @media (min-width: ($min + "px")) and (max-width: ($max + "px")) {
+    @content;
+  }
+}
+
+// make item center
+@mixin flexCenter {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+// custom responsive flex container
+@mixin flexContainer($width, $space, $gap, $jc) {
+  --width: #{$width};
+  --space: #{$space};
+  --gap: #{$gap};
+  --jc: #{$jc};
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: var(--jc);
+  margin: 0 calc(-1 * var(--space));
+  gap: var(--gap) 0;
+  > * {
+    padding: 0 var(--space);
+    flex-basis: var(--width);
+    max-width: var(--width);
+  }
+}

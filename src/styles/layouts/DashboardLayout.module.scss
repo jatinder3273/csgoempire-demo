@@ -1,0 +1,77 @@
+@import "../../scss/var";
+
+.DashboardLayout {
+  background-color: #f7f6f9;
+  --sidebarWidth: 245px;
+  @include max(767) {
+    --sidebarWidth: 215px;
+  }
+  &:global(.sidebarClose) {
+    padding: 0;
+    .DashboardPage {
+      padding: 0;
+    }
+    .DashboardSidebar {
+      transform: translate(-100%);
+      box-shadow: none;
+    }
+  }
+}
+.DashboardPage {
+  min-height: 100vh;
+  overflow-x: hidden;
+  width: 100%;
+  background: #0e131b;
+  transition: 0.15s linear;
+  @include min(992) {
+    padding-left: var(--sidebarWidth);
+  }
+}
+.DashboardSidebar {
+  position: fixed;
+  top: 72px;
+  left: 0;
+  bottom: 0;
+  background-color: $primary;
+  max-width: var(--sidebarWidth);
+  width: var(--sidebarWidth);
+  z-index: 999;
+  transition: 0.15s linear;
+  border-right: 1px solid #18262f;
+  @media (max-width: 992px) {
+    top: 0;
+  }
+}
+.overlay {
+  @include max(991) {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background-color: rgba(black, 0.5);
+    width: 100%;
+    z-index: 998;
+    display: block;
+    &.hide {
+      display: none;
+    }
+  }
+}
+.DashboardBody {
+  height: 100vh;
+  overflow-y: auto;
+  h1 {
+    font-size: 28px;
+    font-weight: $fontWeight600;
+    color: #2a2a2a;
+    margin-bottom: 1rem;
+  }
+}
+.DashboardBody_content {
+  padding: 2rem 2rem 2rem;
+  margin-top: 80px;
+  @include max(767) {
+    padding: 1rem 1rem 0;
+  }
+}

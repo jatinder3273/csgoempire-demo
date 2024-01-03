@@ -1,0 +1,424 @@
+@import "../../scss/var";
+
+.dash_page {
+  padding: 2rem;
+  border-radius: 12px;
+  border: 1px solid #18262f;
+  background: #121c23;
+  margin-bottom: 20px;
+  @media (max-width: 767px) {
+    padding: 2rem 12px;
+  }
+  .heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    h1 {
+      color: #fff;
+      font-size: 20px;
+      font-style: normal;
+      font-weight: 700;
+      line-height: 35px; /* 175% */
+      text-transform: uppercase;
+    }
+    p {
+      color: #576a78;
+      font-size: 12px;
+      font-style: normal;
+      font-weight: 700;
+      line-height: normal;
+      display: flex;
+      align-items: center;
+      svg {
+        margin-right: 5px;
+      }
+    }
+  }
+  .RollingSection {
+    background-image: url("../../assests/coinsGoal.png");
+    background-size: auto 100px;
+    background-repeat: repeat-x;
+    max-width: 1200px;
+    width: 100%;
+    margin: 20px auto;
+    height: 100px;
+    position: relative;
+    transition: background-position 1s ease-in-out;
+    background-position: center;
+    &:before {
+      content: "";
+      position: absolute;
+      top: 0;
+      width: 25%;
+      height: 100%;
+      left: 0;
+      background: -webkit-gradient(
+        linear,
+        left top,
+        right top,
+        from(rgba(26, 28, 36, 0.9)),
+        to(transparent)
+      );
+      /* background: linear-gradient(90deg,rgba(26,28,36,.9) 0%,transparent 100%); */
+    }
+    &:after {
+      content: "";
+      position: absolute;
+      top: 0;
+      width: 25%;
+      height: 100%;
+      right: 0;
+      background: linear-gradient(
+        270deg,
+        rgba(26, 28, 36, 0.9) 0%,
+        transparent 100%
+      );
+      /* background: linear-gradient(90deg,rgba(26,28,36,.9) 0%,transparent 100%); */
+    }
+    .rollingText {
+      text-align: center;
+      margin-top: 12px;
+      h2 {
+        color: #fff;
+        font-size: 20px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: normal;
+        text-transform: uppercase;
+      }
+      h6 {
+        color: #fff;
+        font-size: 40px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: normal;
+        text-transform: uppercase;
+      }
+    }
+  }
+  .prevRoll {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    @media (max-width: 767px) {
+      display: none;
+    }
+    .prevMain {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      .prevLeft {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0 10px;
+
+        h3 {
+          color: #576a78;
+          font-size: $font14;
+          font-weight: $fontWeight600;
+          line-height: normal;
+          text-transform: uppercase;
+          margin: 0 15px;
+          @media (max-width: 767px) {
+            margin: 10px 0;
+          }
+        }
+        label {
+          color: #d3e0e9;
+          font-size: $font14;
+          font-weight: $fontWeight600;
+          line-height: normal;
+          text-transform: uppercase;
+        }
+        img {
+          width: 23px;
+          height: 23px;
+        }
+      }
+      .iconsMain {
+        display: flex;
+        align-items: center;
+        .icons {
+          margin: 0 5px;
+          display: flex;
+          align-items: center;
+          label {
+            margin-left: 8px;
+          }
+        }
+      }
+    }
+  }
+
+  .betAmount {
+    border-radius: 20px;
+    border: 1px solid #222c39;
+    background: #0e131b;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: auto;
+    margin: 25px auto 60px;
+    height: 40px;
+    @media (max-width: 767px) {
+      margin: 25px auto 25px;
+    }
+    .amountBtns {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      input {
+        background-color: transparent;
+        font-size: 14px;
+        color: #fff;
+        font-weight: 600;
+        border: none;
+        margin: 0 15px;
+        border-right: 1px solid #222c39;
+        &::placeholder {
+          color: #454e61;
+          font-weight: 600;
+        }
+        &:focus {
+          outline: none;
+        }
+      }
+      .buttons {
+        display: flex;
+        button {
+          border-radius: 10px;
+          background: #222c39;
+          height: 20px;
+          color: #8694b6;
+          text-align: center;
+          font-size: 10px;
+          font-style: normal;
+          font-weight: 600;
+          line-height: 16px; /* 160% */
+          text-transform: uppercase;
+          border: none;
+          margin: 0 6px;
+        }
+      }
+    }
+  }
+  .placeBet {
+    border-radius: 24px;
+    border: 1px solid #243742;
+    background: #12181d;
+    padding: 12px 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    @media (max-width: 767px) {
+      margin-top: 25px;
+    }
+    .placeLeft {
+      display: flex;
+      align-items: center;
+      h4 {
+        color: #d3e0e9;
+        margin-left: 12px;
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: normal;
+        text-transform: uppercase;
+        margin: 0;
+        margin-left: 10px;
+      }
+    }
+    .placeRight {
+      h6 {
+        color: #5b6c79;
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: normal;
+        text-transform: uppercase;
+        margin: 0;
+      }
+    }
+  }
+  .totalBet {
+    border-radius: 12px;
+    border: 1px solid #243742;
+    padding: 16px;
+    background: #1c2932;
+    margin-top: 10px;
+    .totalMain {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      .totalLeft {
+        h5 {
+          color: #5b6c79;
+          font-size: 12px;
+          font-style: normal;
+          font-weight: 600;
+          line-height: normal;
+          margin: 0;
+        }
+      }
+      .totalRight {
+        display: flex;
+        align-items: center;
+        h4 {
+          color: #5b6c79;
+          font-size: 12px;
+          font-style: normal;
+          font-weight: 600;
+          margin: 0;
+          line-height: normal;
+        }
+        svg {
+          margin-right: 6px;
+        }
+      }
+    }
+    ul {
+      padding: 16px 0 0 0;
+      margin: 16px 0 0 0;
+      border-top: 1px solid #293c48;
+
+      li {
+        list-style: none;
+        .TotlaBet {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          margin-bottom: 6px;
+          .placeLeft {
+            display: flex;
+            align-items: center;
+            svg {
+              margin-right: 6px;
+            }
+            h4 {
+              color: #5b6c79;
+              font-size: 12px;
+              font-style: normal;
+              font-weight: 600;
+              line-height: normal;
+              margin: 0;
+            }
+          }
+          .placeRight {
+            h6 {
+              color: #5b6c79;
+              font-size: 12px;
+              font-style: normal;
+              font-weight: 600;
+              line-height: normal;
+              margin: 0;
+            }
+          }
+        }
+      }
+    }
+  }
+  table {
+    th {
+      background: transparent;
+      color: #3d4d65;
+      font-size: 12px;
+      font-style: normal;
+      font-weight: 600;
+      border: none;
+      line-height: 21px; /* 175% */
+    }
+    tr {
+      border: none;
+
+      td {
+        color: #bfd1ea;
+        border: none;
+        font-size: 12px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: 21px; /* 175% */
+        padding: 10px 10px;
+      }
+
+      &:nth-child(odd) {
+        td {
+          background: #16222b;
+        }
+      }
+
+      /* Style even rows */
+      &:nth-child(even) {
+        td {
+          background: transparent;
+        }
+      }
+    }
+  }
+}
+
+.scrollBackground {
+  background-position: 2000px 0 !important; /* Start from the right */
+  animation: scrollBackground 5s linear infinite; /* Adjust the duration as needed */
+  &:before {
+    width: 0 !important;
+    height: 0 !important;
+    background: none !important;
+  }
+  &:after {
+    width: 0 !important;
+    height: 0 !important;
+    background: none !important;
+  }
+}
+
+// @keyframes scrollBackground {
+//   0% {
+//     background-position: 100% 0;
+//   }
+//   100% {
+//     background-position: 0 0;
+//   }
+// }
+
+.prevRollsContainer {
+  overflow-x: hidden;
+  white-space: nowrap;
+  position: relative;
+  // width: 100%;
+
+  .iconsMain {
+    display: inline-flex;
+    animation: scrollIcons 5s linear infinite; /* Adjust the duration as needed */
+  }
+
+  .icons {
+    margin-right: 10px; /* Adjust the margin as needed */
+  }
+
+  @keyframes scrollIcons {
+    0% {
+      transform: translateX(100%);
+    }
+    100% {
+      transform: translateX(-100%);
+    }
+  }
+}
+
+/* Add this to your styles */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(6px);
+  }
+}
+
+.TotlaBet {
+  /* Your existing styles */
+  animation: fadeIn 0.5s ease-in; /* Adjust the animation duration as needed */
+}
