@@ -28,28 +28,33 @@ function Lists() {
   const isMountedCard = useRef(false);
   const isMountedCardTotal = useRef(false);
 
-  console.log("data", animatedBets, animatedBetsCard, animatedBetsTotal);
-
   // useEffect to animatedBetsTotal total bets
   useEffect(() => {
+    console.log(5);
+    console.log("data", animatedBets, animatedBetsCard, animatedBetsTotal);
     const delay = 1200; // Set a larger delay time (in milliseconds)
 
     const sortedBet = totalBets.sort((a: Bet, b: Bet) => b.amount - a.amount);
 
     const animatedBetsTotalFun = async () => {
+      console.log(1);
+
       for (const element of sortedBet) {
         console.log("====================================");
         console.log(element, "element");
         console.log("====================================");
         await new Promise((resolve) => setTimeout(resolve, delay));
+        console.log(4);
         setAnimatedBetsTotal((prevBets: Bet[]) => [...prevBets, element]);
       }
     };
 
     if (isMountedCardTotal.current) {
+      console.log(2);
       // Only run the effect after the initial render
       animatedBetsTotalFun();
     } else {
+      console.log(3);
       isMountedCardTotal.current = true;
     }
   }, []);
