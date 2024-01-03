@@ -17,7 +17,7 @@ interface Bet {
   amount: number;
 }
 
-function Lists() {
+function Lists({ scrollBackground }: { scrollBackground: boolean }) {
   // Animated bets for different sections
   const [animatedBets, setAnimatedBets] = useState<any>([]);
   const [animatedBetsCard, setAnimatedBetsCard] = useState<any>([]);
@@ -25,27 +25,22 @@ function Lists() {
 
   // useEffect to animatedBetsTotal total bets
   useEffect(() => {
-    console.log(5);
-    // console.log("data", animatedBets, animatedBetsCard, animatedBetsTotal);
     const delay = 1200; // Set a larger delay time (in milliseconds)
 
     const sortedBet = totalBets.sort((a: Bet, b: Bet) => b.amount - a.amount);
 
     const animatedBetsTotalFun = async () => {
-      console.log(1);
-
       for (const element of sortedBet) {
-        console.log("====================================");
-        console.log(element, "element");
-        console.log("====================================");
         await new Promise((resolve) => setTimeout(resolve, delay));
-        console.log(4);
         setAnimatedBetsTotal((prevBets: Bet[]) => [...prevBets, element]);
       }
     };
-
-    animatedBetsTotalFun();
-  }, []);
+    if (scrollBackground) {
+      setAnimatedBetsTotal([]);
+    } else {
+      animatedBetsTotalFun();
+    }
+  }, [scrollBackground]);
 
   // useEffect to animateBets  bets
   useEffect(() => {
@@ -61,9 +56,12 @@ function Lists() {
         setAnimatedBets((prevBets: Bet[]) => [...prevBets, element]);
       }
     };
-
-    animateBetsFun();
-  }, []);
+    if (scrollBackground) {
+      setAnimatedBets([]);
+    } else {
+      animateBetsFun();
+    }
+  }, [scrollBackground]);
 
   // useEffect to animatedBetsCard  bets
   useEffect(() => {
@@ -79,9 +77,12 @@ function Lists() {
         setAnimatedBetsCard((prevBets: Bet[]) => [...prevBets, element]);
       }
     };
-
-    animatedBetsCardFun();
-  }, []);
+    if (scrollBackground) {
+      setAnimatedBetsCard([]);
+    } else {
+      animatedBetsCardFun();
+    }
+  }, [scrollBackground]);
 
   // bet total amount function
   function calculateTotalAmount(bets: Bet[]): number {

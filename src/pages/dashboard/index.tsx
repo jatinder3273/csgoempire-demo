@@ -10,7 +10,7 @@ import Count from "../../components/count";
 import SliderCard from "../../components/slider";
 
 function Dashboard() {
-  const [timer, setTimer] = useState<any>(5);
+  const [timer, setTimer] = useState<any>(10);
   const [elapsedTime, setElapsedTime] = useState(0);
   const [scrollBackground, setScrollBackground] = useState(false);
 
@@ -58,6 +58,7 @@ function Dashboard() {
     // Cleanup the interval on component unmount
     return () => clearInterval(intervalId);
   }, [elapsedTime]);
+  console.log(scrollBackground, "scrollBackground");
 
   return (
     <DashboardLayout>
@@ -101,7 +102,7 @@ function Dashboard() {
 
         {/* List Amount Section Start Here  */}
         <div>
-          <Lists />
+          <Lists scrollBackground={scrollBackground} />
         </div>
       </div>
 
