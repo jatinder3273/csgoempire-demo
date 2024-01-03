@@ -28,7 +28,7 @@ function Lists() {
   const isMountedCard = useRef(false);
   const isMountedCardTotal = useRef(false);
 
-  console.log(animatedBets, animatedBetsCard, animatedBetsTotal);
+  console.log("data", animatedBets, animatedBetsCard, animatedBetsTotal);
 
   // useEffect to animatedBetsTotal total bets
   useEffect(() => {
