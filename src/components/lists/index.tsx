@@ -27,9 +27,9 @@ function Lists() {
   const isMounted = useRef(false);
   const isMountedCard = useRef(false);
   const isMountedCardTotal = useRef(false);
-  console.log("====================================");
+
   console.log(animatedBets, animatedBetsCard, animatedBetsTotal);
-  console.log("====================================");
+
   // useEffect to animatedBetsTotal total bets
   useEffect(() => {
     const delay = 1200; // Set a larger delay time (in milliseconds)
