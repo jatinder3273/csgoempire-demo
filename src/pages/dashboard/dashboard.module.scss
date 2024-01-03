@@ -13,6 +13,10 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    @media (max-width: 767px) {
+      flex-direction: column;
+      align-items: start;
+    }
     h1 {
       color: #fff;
       font-size: 20px;
@@ -20,6 +24,9 @@
       font-weight: 700;
       line-height: 35px; /* 175% */
       text-transform: uppercase;
+      @media (max-width: 767px) {
+        margin-bottom: 0;
+      }
     }
     p {
       color: #576a78;
@@ -163,11 +170,16 @@
     height: 40px;
     @media (max-width: 767px) {
       margin: 25px auto 25px;
+      justify-content: start;
+      width: 95%;
     }
     .amountBtns {
       display: flex;
       align-items: center;
       justify-content: space-between;
+      @media (max-width: 767px) {
+        overflow: hidden;
+      }
       input {
         background-color: transparent;
         font-size: 14px;
@@ -176,6 +188,9 @@
         border: none;
         margin: 0 15px;
         border-right: 1px solid #222c39;
+        @media (max-width: 767px) {
+          margin-left: 10px;
+        }
         &::placeholder {
           color: #454e61;
           font-weight: 600;
@@ -186,6 +201,9 @@
       }
       .buttons {
         display: flex;
+        @media (max-width: 767px) {
+          overflow: auto;
+        }
         button {
           border-radius: 10px;
           background: #222c39;
@@ -199,6 +217,12 @@
           text-transform: uppercase;
           border: none;
           margin: 0 6px;
+        }
+      }
+      svg {
+        @media (max-width: 767px) {
+          width: 34px;
+          height: 34px;
         }
       }
     }
@@ -358,7 +382,7 @@
 }
 
 .scrollBackground {
-  background-position: 2000px 0 !important; /* Start from the right */
+  background-position-x: -2000px !important; /* Start from the right */
   animation: scrollBackground 5s linear infinite; /* Adjust the duration as needed */
   &:before {
     width: 0 !important;
@@ -369,40 +393,6 @@
     width: 0 !important;
     height: 0 !important;
     background: none !important;
-  }
-}
-
-// @keyframes scrollBackground {
-//   0% {
-//     background-position: 100% 0;
-//   }
-//   100% {
-//     background-position: 0 0;
-//   }
-// }
-
-.prevRollsContainer {
-  overflow-x: hidden;
-  white-space: nowrap;
-  position: relative;
-  // width: 100%;
-
-  .iconsMain {
-    display: inline-flex;
-    animation: scrollIcons 5s linear infinite; /* Adjust the duration as needed */
-  }
-
-  .icons {
-    margin-right: 10px; /* Adjust the margin as needed */
-  }
-
-  @keyframes scrollIcons {
-    0% {
-      transform: translateX(100%);
-    }
-    100% {
-      transform: translateX(-100%);
-    }
   }
 }
 
@@ -420,5 +410,19 @@
 
 .TotlaBet {
   /* Your existing styles */
-  animation: fadeIn 0.5s ease-in; /* Adjust the animation duration as needed */
+  animation: fadeIn 0.5s ease-in-out; /* Adjust the animation duration as needed */
+}
+
+.prevRollsContainer {
+  overflow: hidden; /* Hide the overflowing content */
+}
+
+.iconsContainer {
+  display: flex;
+  transition: transform 0.5s ease; /* Add a transition for the transform property */
+  // animation: animateleft 5s linear infinite;
+}
+
+.slick_slider {
+  max-width: 300px;
 }
