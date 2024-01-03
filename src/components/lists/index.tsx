@@ -37,9 +37,9 @@ function Lists() {
     const sortedBet = totalBets.sort((a: Bet, b: Bet) => b.amount - a.amount);
 
     const animatedBetsTotalFun = async () => {
-      for (let i = 0; i < sortedBet.length; i++) {
+      for (const element of sortedBet) {
         await new Promise((resolve) => setTimeout(resolve, delay));
-        setAnimatedBetsTotal((prevBets: Bet[]) => [...prevBets, sortedBet[i]]);
+        setAnimatedBetsTotal((prevBets: Bet[]) => [...prevBets, element]);
       }
     };
 
@@ -60,9 +60,9 @@ function Lists() {
     );
 
     const animateBetsFun = async () => {
-      for (let i = 0; i < sortedBets.length; i++) {
+      for (const element of sortedBets) {
         await new Promise((resolve) => setTimeout(resolve, delay));
-        setAnimatedBets((prevBets: Bet[]) => [...prevBets, sortedBets[i]]);
+        setAnimatedBets((prevBets: Bet[]) => [...prevBets, element]);
       }
     };
 
@@ -83,9 +83,9 @@ function Lists() {
     );
 
     const animatedBetsCardFun = async () => {
-      for (let i = 0; i < sortedBete.length; i++) {
+      for (const element of sortedBete) {
         await new Promise((resolve) => setTimeout(resolve, delay));
-        setAnimatedBetsCard((prevBets: Bet[]) => [...prevBets, sortedBete[i]]);
+        setAnimatedBetsCard((prevBets: Bet[]) => [...prevBets, element]);
       }
     };
 
