@@ -36,7 +36,7 @@ function Lists() {
 
     const sortedBet = totalBets.sort((a: Bet, b: Bet) => b.amount - a.amount);
 
-    const animatedBetsTotal = async () => {
+    const animatedBetsTotalFun = async () => {
       for (let i = 0; i < sortedBet.length; i++) {
         await new Promise((resolve) => setTimeout(resolve, delay));
         setAnimatedBetsTotal((prevBets: Bet[]) => [...prevBets, sortedBet[i]]);
@@ -45,7 +45,7 @@ function Lists() {
 
     if (isMountedCardTotal.current) {
       // Only run the effect after the initial render
-      animatedBetsTotal();
+      animatedBetsTotalFun();
     } else {
       isMountedCardTotal.current = true;
     }
@@ -59,7 +59,7 @@ function Lists() {
       (a: Bet, b: Bet) => b.amount - a.amount
     );
 
-    const animateBets = async () => {
+    const animateBetsFun = async () => {
       for (let i = 0; i < sortedBets.length; i++) {
         await new Promise((resolve) => setTimeout(resolve, delay));
         setAnimatedBets((prevBets: Bet[]) => [...prevBets, sortedBets[i]]);
@@ -68,7 +68,7 @@ function Lists() {
 
     if (isMounted.current) {
       // Only run the effect after the initial render
-      animateBets();
+      animateBetsFun();
     } else {
       isMounted.current = true;
     }
@@ -82,7 +82,7 @@ function Lists() {
       (a: Bet, b: Bet) => b.amount - a.amount
     );
 
-    const animatedBetsCard = async () => {
+    const animatedBetsCardFun = async () => {
       for (let i = 0; i < sortedBete.length; i++) {
         await new Promise((resolve) => setTimeout(resolve, delay));
         setAnimatedBetsCard((prevBets: Bet[]) => [...prevBets, sortedBete[i]]);
@@ -91,7 +91,7 @@ function Lists() {
 
     if (isMountedCard.current) {
       // Only run the effect after the initial render
-      animatedBetsCard();
+      animatedBetsCardFun();
     } else {
       isMountedCard.current = true;
     }
