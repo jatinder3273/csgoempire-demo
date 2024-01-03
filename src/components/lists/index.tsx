@@ -34,12 +34,12 @@ function Lists() {
   useEffect(() => {
     const delay = 1200; // Set a larger delay time (in milliseconds)
 
-    const sortedBets = totalBets.sort((a: Bet, b: Bet) => b.amount - a.amount);
+    const sortedBet = totalBets.sort((a: Bet, b: Bet) => b.amount - a.amount);
 
     const animatedBetsTotal = async () => {
-      for (let i = 0; i < sortedBets.length; i++) {
+      for (let i = 0; i < sortedBet.length; i++) {
         await new Promise((resolve) => setTimeout(resolve, delay));
-        setAnimatedBetsTotal((prevBets: Bet[]) => [...prevBets, sortedBets[i]]);
+        setAnimatedBetsTotal((prevBets: Bet[]) => [...prevBets, sortedBet[i]]);
       }
     };
 
@@ -78,14 +78,14 @@ function Lists() {
   useEffect(() => {
     const delay = 1200; // Set a larger delay time (in milliseconds)
 
-    const sortedBets = totalBetsCard1.sort(
+    const sortedBete = totalBetsCard1.sort(
       (a: Bet, b: Bet) => b.amount - a.amount
     );
 
     const animatedBetsCard = async () => {
-      for (let i = 0; i < sortedBets.length; i++) {
+      for (let i = 0; i < sortedBete.length; i++) {
         await new Promise((resolve) => setTimeout(resolve, delay));
-        setAnimatedBetsCard((prevBets: Bet[]) => [...prevBets, sortedBets[i]]);
+        setAnimatedBetsCard((prevBets: Bet[]) => [...prevBets, sortedBete[i]]);
       }
     };
 
