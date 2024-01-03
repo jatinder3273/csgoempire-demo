@@ -10,7 +10,7 @@ import Count from "../../components/count";
 import SliderCard from "../../components/slider";
 
 function Dashboard() {
-  const [timer, setTimer] = useState<any>(14);
+  const [timer, setTimer] = useState<any>(5);
   const [elapsedTime, setElapsedTime] = useState(0);
   const [scrollBackground, setScrollBackground] = useState(false);
 
@@ -41,7 +41,7 @@ function Dashboard() {
                 // Remove the class and restart the timer after 2-3 seconds
                 setScrollBackground(false);
                 setTimeout(() => {
-                  setTimer(14);
+                  setTimer(5);
                   setElapsedTime(0);
                 }, 10000);
               }, 5000);
@@ -50,7 +50,7 @@ function Dashboard() {
             return 0;
           }
         } else {
-          return prevTimer !== undefined ? prevTimer - 0.01 : 14;
+          return prevTimer !== undefined ? prevTimer - 0.01 : 5;
         }
       });
     }, 20);

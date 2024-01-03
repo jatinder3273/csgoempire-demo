@@ -29,7 +29,7 @@ function SliderCard() {
     slidesToShow: 8,
     slidesToScroll: 1,
     autoplay: true, // Enable auto-scrolling
-    autoplaySpeed: 20000,
+    autoplaySpeed: 2000,
   };
 
   return (
