@@ -126,17 +126,19 @@ function Lists() {
             </div>
             <ul>
               {animatedBetsTotal.map((bet: any, index: number) => (
-                <li key={index}>
-                  <div className={styles.TotlaBet}>
-                    <div className={styles.placeLeft}>
-                      {bet.icon}
-                      <h4>Place Bet</h4>
+                <>
+                  <li key={`c-${index}`}>
+                    <div className={styles.TotlaBet}>
+                      <div className={styles.placeLeft}>
+                        {bet.icon}
+                        <h4>Place Bet</h4>
+                      </div>
+                      <div className={styles.placeRight}>
+                        <h6>{` ${bet.winMultiplier}`}</h6>
+                      </div>
                     </div>
-                    <div className={styles.placeRight}>
-                      <h6>{` ${bet.winMultiplier}`}</h6>
-                    </div>
-                  </div>
-                </li>
+                  </li>
+                </>
               ))}
             </ul>
           </div>
@@ -165,7 +167,7 @@ function Lists() {
             <ul>
               {animatedBetsCard.map((bet: any, index: number) => (
                 <>
-                  <li key={index}>
+                  <li key={`b-${index}`}>
                     <div className={styles.TotlaBet}>
                       <div className={styles.placeLeft}>
                         {bet.icon}
@@ -204,17 +206,19 @@ function Lists() {
             </div>
             <ul>
               {animatedBets.map((bet: any, index: number) => (
-                <li key={index}>
-                  <div className={styles.TotlaBet}>
-                    <div className={styles.placeLeft}>
-                      {bet.icon}
-                      <h4>Place Bet</h4>
+                <>
+                  <li key={`a-${index}`}>
+                    <div className={styles.TotlaBet}>
+                      <div className={styles.placeLeft}>
+                        {bet.icon}
+                        <h4>Place Bet</h4>
+                      </div>
+                      <div className={styles.placeRight}>
+                        <h6>{` ${bet.winMultiplier}`}</h6>
+                      </div>
                     </div>
-                    <div className={styles.placeRight}>
-                      <h6>{` ${bet.winMultiplier}`}</h6>
-                    </div>
-                  </div>
-                </li>
+                  </li>
+                </>
               ))}
             </ul>
           </div>
